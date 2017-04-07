@@ -17,7 +17,7 @@ public class hw01_105021017 {
     			if(((Student)nameList.get(b)).getScore()>((Student)nameList.get(a)).getScore()){
     				String tmp = nameList.get(a);
     				nameList.set(a , nameList.get(b));
-    				nameList.set(b , tmp);
+    				
     			}
     		}
     	}

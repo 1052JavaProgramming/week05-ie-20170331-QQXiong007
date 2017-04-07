@@ -9,14 +9,18 @@ public class hw01_105021017 {
         Scanner scn = new Scanner(System.in);
         int i = 1;
         while(true){
-        	System.out.println("請輸入第"+i+"位同學的名字:");
-        	String name = scn.next();
-        	System.out.println("請輸入第"+i+"位同學的ID:");
-        	String id = scn.next();
-        	System.out.println("請輸入第"+i+"位同學的成績:");
-        	int score = scn.nextInt();
-        	nameList.add(name , id , score);
+        	System.out.println("請輸入第"+i+"位同學的名字,ID,成績:");
+        	nameList.add(new Student(scn.next() , scn.next() , scn.nextInt()));
         }
+        for(int a=0 ; a<nameList.size() ; a++){
+    		for(int b=a+1 ; b<nameList.size() ; b++){
+    			if(((Student)nameList.get(b)).getScore()>((Student)nameList.get(a)).getScore()){
+    				String tmp = nameList.get(a);
+    				nameList.set(a , nameList.get(b));
+    				nameList.set(b , tmp);
+    			}
+    		}
+    	}
 	}
 
 }
